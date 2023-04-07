@@ -1,2 +1,2 @@
 # react-todo-list
-Simple To Do list with React
+Simple To-Do list with React

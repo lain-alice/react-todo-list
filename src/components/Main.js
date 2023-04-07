@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import '../App.css';
 
 import Input from './Input'
+import List from './List'
+
+// const [ todos, setTodos ] = useState();
 
 const BREAK_POINT_TABLET = 768;
 
@@ -48,6 +51,7 @@ const Main = () => {
         <div className="main-box">
             <h1>To-Do List</h1>
             <Input />
+            <List />
         </div>
       </MainArea>
     </>

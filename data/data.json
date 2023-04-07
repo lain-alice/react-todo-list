@@ -2,11 +2,13 @@
     "todos": [
       {
         "id": 1,
-        "body": "폼클렌징 사기"
+        "text": "폼클렌징 사기",
+        "checked": false
       },
       {
         "id": 2,
-        "body": "덤벨운동 하기"
+        "text": "덤벨운동 하기",
+        "checked": false
       }
     ]
 }

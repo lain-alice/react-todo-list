@@ -39,6 +39,12 @@ const InputArea = styled.div`
     .input-box{
       
     }
+    input{
+      flex:3 0 0;
+    }
+    button{
+      flex:1 0 0;
+    }
   }
   
 `;

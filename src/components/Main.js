@@ -40,6 +40,9 @@ const MainArea = styled.div`
     .main-box{
       width:90%;
     }
+    h1{
+      font-size:1.8rem;
+    }
   }
   
 `;

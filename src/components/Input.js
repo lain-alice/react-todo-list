@@ -38,21 +38,47 @@ const InputArea = styled.div`
     .input-box {
     }
     input {
-      flex: 3 0 0;
     }
     button {
-      flex: 1 0 0;
     }
   }
 `;
 
 const Input = () => {
+  const [todo, setTodo] = useState('');
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    fetch('http://localhost:4000/todos/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        text: todo,
+        checked: false,
+      }),
+    })
+      .then(() => {
+        window.location.href = 'http://localhost:3000/';
+      })
+      .catch((error) => {
+        console.error('Error', error);
+      });
+  }
+
   return (
     <>
       <InputArea>
         <div className="input-box">
-          <input type="text" placeholder="할 일을 입력하세요" />
-          <button>등록</button>
+          <input
+            type="text"
+            onChange={(e) => setTodo(e.target.value)}
+            placeholder="할 일을 입력하세요"
+          />
+          <button onClick={handleSubmit}>등록</button>
         </div>
       </InputArea>
     </>

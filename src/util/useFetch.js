@@ -1,37 +1,23 @@
 import { useState, useEffect } from 'react';
 
 const useFetch = (url) => {
-  /* useState를 이용하여 data, isPending, error를 정의하세요. */
   const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
 
   /* useFetch 안의 중심 로직을 작성해주세요. */
   useEffect(() => {
-    setTimeout(() => {
-      fetch(url, {
-        headers: {
-          "Content-Type" : "application/json",
-          Accept: "application/json"
-        }
-      })
-      .then(res => {
-        if (!res.ok) {
-          throw Error('could not fetch the data for that resource');
-        } 
+    fetch(url)
+      .then((res) => {
         return res.json();
       })
-      .then(data => {
+      .then((data) => {
         setData(data);
-        setError(null);
       })
-      .catch(err => {
-        setError(err.message);
-      })
-    }, 0);
-  }, [url])
+      .catch((err) => {
+        console.error(`useFetch(${url}) error : `, err);
+      });
+  }, [url]);
 
-  return [data, error];
-}
+  return data;
+};
 
- 
 export default useFetch;

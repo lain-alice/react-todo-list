@@ -16,13 +16,14 @@ const ListArea = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    .list-box {
+    .list {
+      width: 80%;
     }
   }
 `;
 
 function List() {
-  const [data] = useFetch('http://localhost:4000/todos');
+  const data = useFetch('http://localhost:4000/todos');
 
   return (
     <ListArea>

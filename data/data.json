@@ -11,11 +11,6 @@
       "checked": false
     },
     {
-      "id": 3,
-      "text": "잠 좀 잘 자기",
-      "checked": false
-    },
-    {
       "text": "",
       "checked": false,
       "id": 4
@@ -51,6 +46,11 @@
       "text": "바보",
       "checked": false,
       "id": 11
+    },
+    {
+      "text": "멍청이",
+      "checked": false,
+      "id": 12
     }
   ]
 }

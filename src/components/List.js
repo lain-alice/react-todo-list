@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import useFetch from '../util/useFetch';
 import styled from 'styled-components';
 
@@ -23,7 +24,20 @@ const ListArea = styled.div`
 `;
 
 function List() {
-  const data = useFetch('http://localhost:4000/todos');
+  const data = useFetch('http://localhost:4000/todos/');
+  const { id } = useParams();
+
+  const handleDeleteClick = () => {
+    fetch(`http://localhost:4000/todos/${id}`, {
+      method: 'DELETE',
+    })
+      .then(() => {
+        window.location.href = 'http://localhost:3000/';
+      })
+      .catch((error) => {
+        console.error('Error', error);
+      });
+  };
 
   return (
     <ListArea>
@@ -34,6 +48,7 @@ function List() {
           data.map((item) => (
             <div className="list" key={item.id}>
               {item.text}
+              <button onClick={handleDeleteClick}>삭제</button>
             </div>
           ))}
       </div>

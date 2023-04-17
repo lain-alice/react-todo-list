@@ -37,7 +37,7 @@ const Input = () => {
             onChange={(e) => setTodo(e.target.value)}
             placeholder="할 일을 입력하세요"
           />
-          <button onClick={handleSubmit}>등록</button>
+          <button onClick={handleSubmit}>바보바보</button>
         </div>
       </InputArea>
     </>

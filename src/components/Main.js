@@ -14,7 +14,7 @@ const Main = () => {
     <>
       <MainArea>
         <div className="main-box">
-          <h1>To-Do List 바보</h1>
+          <h1>To-Do List</h1>
           <Input />
           <List />
         </div>

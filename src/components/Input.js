@@ -52,7 +52,7 @@ const Input = () => {
       <InputArea>
         <div className="input-box">
           <input type="text" placeholder="할 일을 입력하세요" />
-          <button>등록</button>
+          <button>바보바보</button>
         </div>
       </InputArea>
     </>
